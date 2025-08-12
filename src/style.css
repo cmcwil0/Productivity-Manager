@@ -95,6 +95,11 @@ body {
   height: 100vh;
 }
 
+main {
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
 
 /* Navbar Styles */
 
@@ -113,6 +118,7 @@ nav ul {
   display: flex;
   align-items: center; 
   gap: 1.5rem;
+  padding: 0;
 }
 
 nav a {
@@ -127,7 +133,31 @@ nav a:hover {
 
 
 
-
-
 /* Index.html styles */
 
+
+/* to-do list styles */
+
+.list {
+  display: flex;
+}
+
+.list h3 {
+  justify-content: flex-start;
+}
+
+.list .new-task {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 30%;
+}
+
+
+.list-container {
+  border: 2px solid;
+  border-radius: 10px;
+  width: 55vw;
+  height: 65vh;
+  margin: 1rem auto; /* centers container*/
+}
