@@ -1,11 +1,17 @@
 :root {
 
 
-
   --clr-primary: #27374D;
   --clr-secondary: #526D82;
   --clr-accent: #9DB2BF;
   --clr-neutral: #DDE6ED;
+
+  /* rgb values to add opacity later with rgba */
+  --clr-primary-rgb: 39, 55, 77;
+  --clr-secondary-rgb: 82, 109, 130;
+  --clr-accent-rgb: 157, 178, 191;
+  --clr-neutral-rgb: 221, 230, 237;
+
 }
 
 
@@ -163,8 +169,7 @@ nav a:hover {
   flex-direction: column;
   gap: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 100px rgba(0, 0, 0, 0,5);
-  border: 2px solid;
+  border: 3px solid;
 }
 
 .input-task {
@@ -176,11 +181,24 @@ nav a:hover {
 
 .input-task input {
   flex: 1;
-  padding: 10px 17px;
-  border: none;
+  padding: 7px 17px;
+  border: 2px solid transparent;
   outline: none;
-  border-radius: 22px;
-  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: rgba(var(--clr-secondary-rgb), 0.5);
+  caret-color: var(--clr-neutral);
+  color: var(--clr-neutral);
+  transition: all 0.15s ease;
+}
+
+.input-task input::placeholder {
+  color: var(--clr-neutral);
+}
+
+.input-task input:focus {
+  background: var(--clr-secondary);
+  border-color: rgba(var(--clr-neutral-rgb), 0.3);
+  transform: scale(1.01);
 }
 
 .input-task button {
@@ -189,16 +207,18 @@ nav a:hover {
   justify-content: center;
   margin-left: 10px;
   padding: 9px;
-  border-radius: 50%;
-  border: 2px solid rgba(7, 41, 73, 0.2);
+  border-radius: 10px;
+  border: 2px solid rgba(var(--clr-secondary-rgb), 0.2);
   cursor: pointer;
-  transition: all 0.2s ease;
-  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.15s ease;
+  background: rgba(var(--clr-secondary-rgb), 0.5);
+  color: var(--clr-neutral);
 }
 
 .input-task button:hover {
   transform: scale(1.1);
   background: var(--clr-secondary);
+  border-color: rgba(var(--clr-neutral-rgb), 0.3);
 }
 
 .todo-container {
@@ -210,8 +230,8 @@ nav a:hover {
 
 .todo-container ul {
   padding: 0;
-}
 
+}
 
 .task-list li {
   display: flex;
@@ -223,6 +243,7 @@ nav a:hover {
   border-radius: 10px;
   position: relative;
   transition: box-shadow 0.2s ease;
+
 }
 
 .task-list li:hover {
@@ -281,4 +302,13 @@ nav a:hover {
 .task-buttons button:hover {
   color: var(--clr-primary);
   transform: scale(1.2);
+}
+
+.edit-btn-input {
+  padding: 5px 10px;
+  color: var(--clr-neutral);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(var(--clr-primary-rgb), 0.5);
+  border: 2px solid transparent;
 }

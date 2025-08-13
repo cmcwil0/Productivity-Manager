@@ -14,7 +14,7 @@ function setupList() {
     const newTask = document.createElement('li'); //creates new element
     newTask.innerHTML = `
     <input type="checkbox" class="checkbox">
-    <span>${taskText}</span>
+    <span class="task-text">${taskText}</span>
     <div class="task-buttons">
       <button class="edit-btn"><i class="fa-solid fa-pen"></i></button>
       <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
@@ -30,7 +30,36 @@ function setupList() {
     });
 
     //edit button functionality
- 
+    const editBtn = newTask.querySelector('.edit-btn');
+    const taskTextElement = newTask.querySelector('.task-text');
+
+   
+
+    editBtn.addEventListener('click', () => {
+      //if input is already there submit input value
+      const editInput = taskTextElement.querySelector('.edit-btn-input');
+      if(editInput) {
+        taskTextElement.innerHTML = `<span>${editInput.value}</span>`;
+        return
+      }
+
+      const initialText = taskTextElement.textContent;
+
+      taskTextElement.innerHTML = `
+        <input type="text" class="edit-btn-input" value="${initialText}">
+      `;
+
+      const newEditInput = taskTextElement.querySelector('.edit-btn-input');
+      newEditInput.focus(); //sets cursor into input
+      const length = newEditInput.value.length
+      newEditInput.setSelectionRange(length, length); // always sets caret at end of input text
+
+      newEditInput.addEventListener('keypress', (e) => { 
+        if(e.key === 'Enter') {
+          taskTextElement.innerHTML = `<span>${newEditInput.value}</span>`;
+        }
+      });
+    });
 
     todoContainer.style.width = taskList.children.length > 0 ? '100%' : '50%';
   }
