@@ -1,8 +1,10 @@
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+
 import '../css/Home.css'
 import Navline from '../assets/Navline.svg?react'
+
 
 const Home = () => {
   useGSAP(() => {

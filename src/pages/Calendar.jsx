@@ -1,9 +1,11 @@
 import '../css/Calendar.css'
+import CalendarComponent from '../components/CalendarComponent'
+import { addDays, subDays } from "date-fns"
 
 function Calendar() {
   return (
-    <div className="calendar">
-        <div className="calendar-container"></div>
+    <div className='calendar'>
+        <CalendarComponent />
     </div>
   )
 }
