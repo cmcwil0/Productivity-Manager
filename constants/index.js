@@ -9,6 +9,10 @@ const NavLinks = [
         title: "To-Do List"
     },
     {
+        id: "calendar",
+        title: "Calendar"
+    },
+    {
         id: "gym",
         title: "Workout Tracker"
     }

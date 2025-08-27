@@ -37,6 +37,10 @@ const Todo = () => {
     }
   }
 
+  const removeTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id ))
+  }
+
   const addTask = (element) => {
     element.preventDefault()
     if(inputValue.trim() !== '') {
@@ -96,8 +100,9 @@ const Todo = () => {
               }
               <div className='task-buttons-container'>
                 <button className='edit-button'
-                onClick={() => editTask(task.id)}>{editingId === task.id ? '✓' : '✎'}</button>
-                <button className='delete-button'>X</button>
+                onClick={() => editTask(task.id)}>{editingId === task.id ? '✔' : '✎'}</button>
+                <button className='delete-button'
+                onClick={() => removeTask(task.id)}>X</button>
               </div>
 
             </li>

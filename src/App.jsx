@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // pages
 import Home from './pages/Home'
 import Todo from './pages/Todo'
+import Calendar from './pages/Calendar'
 import Gym from './pages/Gym'
 import NotFoundPage from './pages/NotFoundPage'
 
@@ -18,6 +19,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/home' element={<Home />}/>
+      <Route path='/calendar' element={<Calendar />}/>
       <Route path='/todo' element={<Todo />}/>
       <Route path='/gym' element={<Gym />}/>
       <Route path='/*' element={<NotFoundPage />}/>
