@@ -6,10 +6,8 @@ import App from './App.jsx'
 import 'normalize.css'
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
 gsap.registerPlugin(useGSAP)
-gsap.registerPlugin(DrawSVGPlugin)
 
 
 

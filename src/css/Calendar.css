@@ -17,6 +17,8 @@
     height: 80%;
     width: 85%;
     margin-bottom: 3rem;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .calendar-date {
@@ -24,17 +26,25 @@
 }
 
 .calendar-grid {
-    gap: 2rem;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     font-weight: bold;
     text-align: center;
-
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
 }
 
-.days-in-month {
+.days-in-month, .empty-days {
     border: 2px solid var(--color-neutral);
     border-radius: 0.3rem;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.is-current-day {
+    background-color: var(--color-neutral);
+    color: var(--color-secondary);
 }
 
 

@@ -11,5 +11,5 @@
       }
     </style>
   </defs>
-  <line class="cls-1" x1="200" y1="400" x2="200" y2="225"/>
+  <line class="cls-1 nav-line" x1="200" y1="400" x2="200" y2="225"/>
 </svg>
